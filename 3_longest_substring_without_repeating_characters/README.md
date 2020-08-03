@@ -39,7 +39,7 @@ I only got one approach for this. If you guys would like to contribute other app
 
 0. Initialize _seen_ window and _max_length_
 1. Iterate over input string s
-2. If _c_ is in the _seen_ window then move beginning index of _s_ 1 to the right of the index of _c_
+2. If _c_ is in the _seen_ window then move beginning index of _seen_ 1 to the right of the index of _c_
 3. Add _c_ to seen window
 4. Check if current size of window is bigger than previous _max_length_ and change _max_length_ if so
 5. Return _max_length_
