@@ -22,18 +22,24 @@ class Solution:
 
 class Solution:
     def reverse(self, x):
+        # Initialize variables: result will hold reverse value, symbol will hold negative if _x_ is negative number
         result = 0
         symbol = 1
 
+        # Handle if _x_ is negative number
         if x < 0:
             symbol = -1
             x = -x
 
+        # Reverseing _x_ by doing modulo division and adding value to result*10
         while (x):
             result = result * 10 + x % 10
             x //= 10
 
+        # Check result is in 2**32 range
         if result > pow(2, 31):
             return 0
+
+        # Negate result if _x_ was negative
         else:
             return result * symbol

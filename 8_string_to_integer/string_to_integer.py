@@ -1,32 +1,47 @@
-class Solution:
-    def myAtoi(self, str):
-        # 0.
-        str = str.strip()
-        # 1.
-        if str == "":
-            return 0
-        # 2.
-        if str[0] != "+" and str[0] != "-" and not str[0].isnumeric():
-            return 0
-        # 3.
-        if str[0] == "+" or str[0] == "-":
-            sign = str[0]
-            # 4.
-            digits = self.convert(str[1:])
-            # 5.
-            if sign == "+":
-                return min(digits, 2147483647)
-            else:
-                return max(0-digits, -2147483648)
-        # 6.
-        else:
-            return min(self.convert(str), 2147483647)
 
-    # Converts string to integer
-    def convert(self, str):
-        digits = 0
-        for s in str:
-            if not s.isnumeric():
-                break
-            digits = 10 * digits + int(s)
-        return digits
+
+class Solution(object):
+    def myAtoi(self, s):
+
+        # initialize variables:
+        # result which will contain result which we'll return
+        # i which we'll use to iterate
+        result = 0
+        i = 0
+
+        # strip _s_ string of whitespace and convert to array(list)
+        arr = list(s.strip())
+
+        # If array is empty then return
+        if len(arr) == 0:
+            return 0
+
+        # if array has sign in front then note the sign
+        if arr[0] == '-':
+            sign = -1
+        else:
+            sign = 1
+
+        # if array has a sign in front then we need to delete the sign from array
+        if arr[0] == '-' or arr[0] == '+':
+            del arr[0]
+            # or i = 1
+
+        # Iterate while i is less than arr array and arr[i] is a digit
+        while i < len(arr) and arr[i].isdigit():
+            # convert digits one by one using modulus and adding to result * 10
+            # (4879) 4 > 48 > 487 > 4879
+            # We could do int(arr[i]) but int conversion is slower. Also 48 is ord('0')
+            result = result*10 + ord(arr[i]) - 48
+            i += 1  # increment i
+
+        # multiply result by sign of s
+        result = result * sign
+
+        # check if result less than or greater than +/- 2**32
+        if result < -2**31:
+            return -2**31
+        elif result > 2**31 - 1:
+            return 2**31 - 1
+        else:
+            return result

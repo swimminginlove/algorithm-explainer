@@ -35,7 +35,7 @@ Assume we are dealing with an environment which could only store integers within
 ### Approach 1: Converting to and reversing a string
 
 0. Get absolute value of _x_ and convert to string
-1. Reverse string and convert to number
+1. Reverse string using slice syntax by not setting start or end index but setting -1 as step value then converting to number
 2. Check if reversed number is within 32 bit range
 3. If _x_ was negative then negate _reversed_ before returning
 4. Return _reversed_
