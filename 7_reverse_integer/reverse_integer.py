@@ -1,20 +1,22 @@
 # Approach 1:
 class Solution:
     def reverse(self, x):
-        # 0.
+        # 0. Get absolute value of _x_ and convert to string
         s = str(abs(x))
 
-        # 1.
+        # 1. Reverse string using slice syntax by not setting start or end index
+        # but setting -1 as step value then converting to number
         reversed = int(s[::-1])
+        # reversed = int(s[len(s):-len(s)-1:-1])
 
-        # 2.
+        # 2. Check if reversed number is within 32 bit range
         if reversed > 2147483647:
             return 0
 
-        # 3.
+        # 3. If _x_ was negative then negate _reversed_ before returning
         if x < 0:
             reversed *= -1
-        # 4.
+        # 4. Return _reversed_
         return reversed
 
 # Approach 2:
@@ -22,7 +24,9 @@ class Solution:
 
 class Solution:
     def reverse(self, x):
-        # Initialize variables: result will hold reverse value, symbol will hold negative if _x_ is negative number
+        # Initialize variables:
+        # result will hold reverse value
+        # symbol will hold negative if _x_ is negative number
         result = 0
         symbol = 1
 
