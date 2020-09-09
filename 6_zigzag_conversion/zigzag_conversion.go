@@ -8,19 +8,21 @@ func convert(s string, numRows int) string {
 
 	// 1.
 	lines := make([]string, numRows)
-	index := 0
+	row := 0
 	step := 1
 
 	// 2.
 	for i := 0; i < len(s); i++ {
 		// 3.
-		lines[index] = lines[index] + string(s[i])
+		lines[row] = lines[row] + string(s[i])
+
 		// 4.
-		index = index + step
-		// 5.
-		if index == 0 || index == numRows-1 {
+		if row == 0 || row == numRows-1 {
 			step = step * -1
 		}
+
+		// 5.
+		row = row + step
 	}
 
 	// 6.

@@ -1,10 +1,15 @@
 var isPalindrome = function (x) {
+  // 0.
   var original = x;
-  var backwards = 0;
+  var reversed = 0;
 
+  // 1.
   while (x > 0) {
-    backwards = backwards * 10 + (x % 10);
+    // 2.
+    reversed = reversed * 10 + (x % 10);
+    // 3.
     x = Math.trunc(x / 10);
   }
-  return original == backwards;
+  // 4.
+  return original == reversed;
 };

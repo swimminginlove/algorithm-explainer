@@ -37,8 +37,8 @@ Coud you solve it without converting the integer to a string?
 
 ### Approach 1:
 
-0. Initialize _original_ and _backwards_ variables
+0. Initialize _original_ and _reversed_ variables
 1. Iterate while _x_ is greater than 0
-2. Sort of "append" values from _x_ onto the _backwards_ variable by one-by-one pulling them off _x_ with the "x % 10", and adding them to backwards \* 10
+2. Sort of "append" values from _x_ onto the _reversed_ variable by one-by-one pulling them off _x_ with the "x % 10" operation, and adding them to reversed \* 10
 3. Sort of "pop" values from end of _x_ using "x // 10" since it discards remainder values from the division. This makes it so that the "x % 10" in step 2 has a new value on each iteration
-4. Return whether _original_ and _backwards_ are equal (_x_ is palindromic)
+4. Return whether _original_ and _reversed_ are equal (_x_ is palindromic)

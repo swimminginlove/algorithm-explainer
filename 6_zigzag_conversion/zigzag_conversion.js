@@ -13,19 +13,21 @@ var convert = function (s, numRows) {
   var lines = [];
   for (let i = 0; i < numRows; i++) lines.push("");
   // for (let i = 0; i < numRows; i++) lines[i] = [];
-  var index = 0;
+  var row = 0;
   var step = 1;
 
   // 2.
   for (let i = 0; i < s.length; i++) {
     // 3.
-    lines[index] += s[i];
+    lines[row] += s[i];
+
     // 4.
-    index += step;
-    // 5.
-    if (index == 0 || index == numRows - 1) {
+    if (row == 0 || row == numRows - 1) {
       step = step * -1;
     }
+
+    // 5.
+    row += step;
   }
   // 6.
   return lines.join("");

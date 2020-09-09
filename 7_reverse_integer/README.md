@@ -42,4 +42,8 @@ Assume we are dealing with an environment which could only store integers within
 
 ### Approach 2: Reversing integer
 
-0.
+0. Initialize variables: _result_ will hold reverse value, _symbol_ will hold negative if _x_ is a negative number
+1. Handle if _x_ is a negative number
+2. Reversing _x_ by doing modulo division and adding value to result\*10
+3. Check _result_ is in 32 bit range
+4. Negate result if _x_ was negative

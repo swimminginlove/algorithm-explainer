@@ -5,20 +5,20 @@
 class Solution:
     def lengthOfLongestSubstring(self, s):
 
-        # 0. Initialize _seen_ window and _max_length_
+        # 0.
         seen = ''
         max_length = 0
 
-        # 1. Iterate over input string s
+        # 1.
         for c in s:
-            # 2. If _c_ is in the _seen_ window then move beginning index of _seen_ 1 to the right of the index of _c_
+            # 2.
             if c in seen:
                 seen = seen[seen.index(c)+1:]
 
-            # 3. Add _c_ to seen window
+            # 3.
             seen += c
-            # 4. Check if current size of window is bigger than previous _max_length_ and change _max_length_ if so
+            # 4.
             max_length = max(max_length, len(seen))
 
-        # 5. Return _max_length_
+        # 5.
         return max_length

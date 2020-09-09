@@ -1,16 +1,18 @@
+
+// Approach 1
 func longestPalindrome(s string) string {
 	// 0.
 	result := ""
 	// 1.
 	for i := 0; i < len(s); i++ {
 		// 2.
-		odd := helper(s, i, i)
+		odd := expander(s, i, i)
 		// 3.
 		if len(odd) > len(result) {
 			result = odd
 		}
 		// 4.
-		even := helper(s, i, i+1)
+		even := expander(s, i, i+1)
 		// 5.
 		if len(even) > len(result) {
 			result = even
@@ -21,7 +23,7 @@ func longestPalindrome(s string) string {
 	return result
 }
 
-func helper(s string, l, r int) string {
+func expander(s string, l, r int) string {
 	// 0.
 	for l >= 0 && r < len(s) && s[l] == s[r] {
 		// 1.

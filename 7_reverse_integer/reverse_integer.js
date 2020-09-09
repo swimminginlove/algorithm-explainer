@@ -23,23 +23,27 @@ var reverse = function (x) {
 // Approach 2:
 
 function reverse(x) {
+  // 0.
   var result = 0;
   var symbol = 1;
 
+  // 1.
   if (x < 0) {
     symbol = -1;
     x = -x;
   }
 
+  // 2.
   while (x > 0) {
-    console.log("f", result, x);
     result = result * 10 + (x % 10);
     x = Math.trunc(x / 10);
   }
 
+  // 3.
   if (result > 2147483647) {
     return 0;
   } else {
+    // 4.
     return result * symbol;
   }
 }

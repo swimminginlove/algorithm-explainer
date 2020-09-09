@@ -43,12 +43,16 @@ P     I
 
 ## Explanation:
 
+This problem doesn't have anything to do with moving a cursor in a matrix. The zigzag pattern is just a pictorial image. All we're going to do is iterate and add the characters to specific rows.
+
+If numRows = 5, then row iterates through 0 1 2 3 4 3 2 1 0 1 2 3 4 3 2... Like a zigzag!
+
 ### Approach 1:
 
 0. Return _s_ if _numRows_ less than or equal to 1
-1. Intialize variables: _lines_ array with same number of elements as _numRows_, the _index_ at which we add a letter, and _step_ which determines whether we go up(positive) or down(negative)
+1. Intialize variables: _lines_ array with same number of elements as _numRows_, the _row_ at which we add a letter, and _step_ which determines whether we go up(negative) or down(positive)
 2. Iterate over _s_
-3. Add letter, _i_, to _lines_
-4. Add _step_ to _index_
-5. If _index_ is 0 or _index_ is equal to _numRows_ minus 1 then negate _step_
+3. Add letter to _lines_ array
+4. Determine whether going down or up. When _row_ is 0, go down. When _row_ is \_numRows-1, go up.
+5. Add _step_ to _row_
 6. Return all the elements in the _lines_ array joined

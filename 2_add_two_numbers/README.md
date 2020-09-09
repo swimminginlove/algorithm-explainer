@@ -30,7 +30,7 @@ Ok, so we're going to be covering two approaches for solving this problem.
 5. If next of _l1_ is none then give it a value of 0 so we can continue iterating. Useful if both linked lists are different lengths
 6. Do same as step 6 but with _l2_
 7. Recursive calling itself with updated values and equaling result to next value of linked list to return
-8. When everything is done return tail of result linked list
+8. When everything is done return result linked list
 
 ### Approach 2:
 
@@ -41,4 +41,4 @@ Ok, so we're going to be covering two approaches for solving this problem.
 4. Now we give the next of _cur_ the value of the remainder of _c_ divided by 10
 5. Move cur to the next position
 6. Change value of _c_ to _c_ divided by 10 which should equal 1 if _c_ was 10 and 0 if it wasn't
-7. When everything is done return tail of result linked list
+7. When everything is done return result linked list

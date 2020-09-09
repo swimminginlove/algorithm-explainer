@@ -62,10 +62,11 @@ Thefore INT_MIN (−231) is returned.
 
 ### Approach 1:
 
-0. Strip whitespace
-1. If empty then return 0
-2. If not a digit then return 0
-3. If first letter is "+" or "-"
-4. Call helper with str without beginning sign
-5. If positive, get min of res or 2^32. Else get max of -res or -2^32
-6. If first letter is a digit. Return min of call of helper with str or 2^32
+0. Initialize variables
+1. Strip _s_ string of whitespace and convert to array(list)
+2. If array is empty then return
+3. If array has sign in front then note the sign and delete it
+4. Iterate while _i_ is less than _arr_ array and _arr[i]_ is a digit
+5. Convert digits one by one using modulus and adding to result \* 10. (4879) 4 > 48 > 487 > 4879. Get ascii value of character at index _i_ of array _arr_. Also 48 is ord('0').
+6. Multiply _result_ by sign of input _s_
+7. CCheck if _result_ is less than or greater than +/- 2\*\*32 and return
